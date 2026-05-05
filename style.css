@@ -1,0 +1,360 @@
+/* ============================================================
+   BASICS OF GRAPHIC DESIGN — Stylesheet
+   Aesthetic: Editorial / Magazine — clean, bold, typographic
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --ink:       #1a1a1a;
+  --paper:     #f7f4ef;
+  --accent:    #c94b2c;
+  --muted:     #7a7065;
+  --card-bg:   #ffffff;
+  --nav-h:     64px;
+
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'DM Sans', sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset & Base ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--sans);
+  background-color: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  padding: 0 3rem;
+
+  background: rgba(247, 244, 239, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 2px 24px rgba(26, 26, 26, 0.08);
+}
+
+.navbar a {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-out-expo);
+}
+
+.navbar a:hover {
+  color: var(--ink);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ── Hero / Page Title ──────────────────────────────────────── */
+body > h1:first-of-type {
+  display: none; /* replaced visually by the parallax hero section */
+}
+
+/* ── Parallax Sections ──────────────────────────────────────── */
+.parallax {
+  height: 60vh;
+  min-height: 320px;
+
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+}
+
+/* Dark overlay for readability */
+.parallax::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.25) 0%,
+    rgba(26, 26, 26, 0.5) 100%
+  );
+}
+
+/* First parallax is the hero — taller + bold type overlay */
+.parallax:first-of-type {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax:first-of-type::before {
+  content: 'Graphic Design';
+  font-family: var(--serif);
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+  padding: 0 2rem;
+
+  position: relative;
+  z-index: 1;
+
+  animation: fadeUp 1.2s var(--ease-out-expo) both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Content Sections ───────────────────────────────────────── */
+.section {
+  padding: 6rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Override inline background on Contact section */
+.section:last-of-type {
+  background-color: var(--paper) !important;
+}
+
+.section h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+/* Accent rule under h1 */
+.section h1::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #3d3730;
+  max-width: 68ch;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Button ─────────────────────────────────────────────────── */
+button.hi {
+  display: inline-block;
+  margin: 1.5rem 0 2.5rem;
+
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+
+  background: var(--ink);
+  border: none;
+  padding: 0.85rem 1.75rem;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+button.hi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: translateX(-100%);
+  transition: transform 0.35s var(--ease-out-expo);
+}
+
+button.hi:hover::before {
+  transform: translateX(0);
+}
+
+button.hi:hover {
+  color: #ffffff;
+}
+
+button.hi span,
+button.hi {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  padding: 2rem 1.75rem;
+
+  position: relative;
+  transition: transform 0.3s var(--ease-out-expo),
+              box-shadow 0.3s ease;
+}
+
+/* Left accent bar */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height 0.4s var(--ease-out-expo);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.1);
+}
+
+.card:hover::before {
+  height: 100%;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Contact cards — show info clearly */
+.section:last-of-type .card {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .navbar {
+    gap: 1.25rem;
+    padding: 0 1.5rem;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  /* Parallax fixed attachment doesn't work well on iOS — fall back */
+  .parallax {
+    background-attachment: scroll;
+  }
+}
