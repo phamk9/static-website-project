@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Basics of Graphic Design</title>
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -27,11 +27,23 @@
   <button class="hi" onclick="display()">Click me to learn more about this website!</button>
 
   <div class="card-container">
-    <div class="card">
-      <p>Graphic design is all about visual communication. Designers use color, typography, and layout to convey messages effectively.</p>
+    <div class="card expandable-card">
+      <div class="card-header">
+        <p>Graphic design is all about visual communication.</p>
+        <span class="card-arrow">&#8964;</span>
+      </div>
+      <div class="card-body">
+        <p>Designers use color, typography, and layout to convey messages effectively. Every design decision — from font size to color choice — influences how a viewer feels and what they understand.</p>
+      </div>
     </div>
-    <div class="card">
-      <p>Design is everywhere—from logos and websites to advertisements and social media graphics.</p>
+    <div class="card expandable-card">
+      <div class="card-header">
+        <p>Design is everywhere.</p>
+        <span class="card-arrow">&#8964;</span>
+      </div>
+      <div class="card-body">
+        <p>From logos and websites to advertisements and social media graphics, design shapes almost every visual experience in our daily lives. Learning design gives you a new way to see the world.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -42,7 +54,7 @@
 <!-- ABOUT SECTION -->
 <div class="section" style="background-color:white;">
   <h1>About</h1>
-  <h2>This website is dedicated to teaching the basics of graphic design and demonstrating parallax scrolling.</h2>
+  <h2>This website is dedicated to teaching the basics of graphic design.</h2>
 
   <p>
     Graphic design is the art and practice of planning and projecting ideas through visual content.
@@ -52,11 +64,23 @@
   </p>
 
   <div class="card-container">
-    <div class="card">
-      <p>Typography is a key element of design. Choosing the right font can completely change how a message is perceived.</p>
+    <div class="card expandable-card">
+      <div class="card-header">
+        <p>Typography is a key element of design.</p>
+        <span class="card-arrow">&#8964;</span>
+      </div>
+      <div class="card-body">
+        <p>Choosing the right font can completely change how a message is perceived. Serif fonts feel traditional and trustworthy, while sans-serif fonts feel modern and clean. Script fonts add elegance, while display fonts make a bold statement.</p>
+      </div>
     </div>
-    <div class="card">
-      <p>Color theory helps designers create visually appealing and emotionally impactful designs.</p>
+    <div class="card expandable-card">
+      <div class="card-header">
+        <p>Color theory helps designers create impactful designs.</p>
+        <span class="card-arrow">&#8964;</span>
+      </div>
+      <div class="card-body">
+        <p>Understanding warm vs. cool tones, complementary colors, and color psychology allows designers to evoke specific emotions. Red signals urgency or passion, blue conveys calm and trust, and yellow radiates optimism.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -70,11 +94,49 @@
   <p>Explore beginner-friendly tutorials to start your graphic design journey.</p>
 
   <div class="card-container">
-    <div class="card">
-      <p>Learn how to create logos using Adobe Illustrator with simple shapes and typography.</p>
+    <div class="card expandable-card">
+      <div class="card-header">
+        <p>Create logos in Adobe Illustrator.</p>
+        <span class="card-arrow">&#8964;</span>
+      </div>
+      <div class="card-body">
+        <p>Start with basic shapes using the Shape Tool, combine them with the Pathfinder panel, then add typography. Use vector paths so your logo scales infinitely without losing quality. Export as SVG or PDF for professional use.</p>
+      </div>
     </div>
-    <div class="card">
-      <p>Edit photos and create digital artwork using Adobe Photoshop tools like layers and filters.</p>
+    <div class="card expandable-card">
+      <div class="card-header">
+        <p>Edit photos in Adobe Photoshop.</p>
+        <span class="card-arrow">&#8964;</span>
+      </div>
+      <div class="card-body">
+        <p>Master layers and adjustment layers for non-destructive editing. Use the Pen Tool to make precise selections, blend modes to composite images, and smart filters to apply effects you can always tweak later.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h2 class="quiz-title">Test Your Knowledge</h2>
+      <p class="quiz-subtitle">5 questions · Graphic Design Basics</p>
+    </div>
+
+    <div id="quiz-content">
+      <!-- Questions injected by JS -->
+    </div>
+
+    <div id="quiz-result" class="quiz-result hidden">
+      <div class="result-score" id="result-score"></div>
+      <p class="result-msg" id="result-msg"></p>
+      <button class="quiz-btn" id="retry-btn">Try Again</button>
+    </div>
+
+    <div class="quiz-footer" id="quiz-footer">
+      <div class="quiz-progress">
+        <span id="progress-text">Question 1 of 5</span>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <button class="quiz-btn" id="next-btn" disabled>Next</button>
     </div>
   </div>
 </div>
@@ -93,5 +155,6 @@
   </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
