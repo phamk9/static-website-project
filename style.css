@@ -171,8 +171,8 @@ body > p:first-of-type {
 
 /* ── Parallax Sections ──────────────────────────────────────── */
 .parallax {
-  height: 60vh;
-  min-height: 320px;
+  height: 80vh;
+  min-height: 420px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
