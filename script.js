@@ -4,7 +4,7 @@
 
 /* ── EmailJS Init ─────────────────────────────────────────── */
 // Sign up free at https://emailjs.com, then replace these 3 values:
-const EMAILJS_PUBLIC_KEY  = 'rr5jNaaN9gbCc8u2n';   // Account > API Keys
+emailjs.init('rr5jNaaN9gbCc8u2n');
 const EMAILJS_SERVICE_ID  = 'service_o5glqlk';   // Email Services tab
 const EMAILJS_TEMPLATE_ID = 'template_ha96h0r';  // Email Templates tab
 // In your EmailJS template, use these variables: {{from_name}}, {{from_email}}, {{message}}
