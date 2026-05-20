@@ -398,16 +398,17 @@ formSubmit.addEventListener('click', () => {
   formSubmit.disabled    = true;
   formSubmit.textContent = 'Sending…';
 
-  // Sends form data to Web3Forms API — they forward it to your email with no backend needed
+  // Sends form data using FormData instead of JSON — avoids CORS preflight issues
+  // Simple POST requests with FormData don't trigger a preflight check unlike JSON requests
+  const formData = new FormData();
+  formData.append('access_key', WEB3FORMS_KEY); //your access key tells Web3Forms which email address to deliver to
+  formData.append('name',    name);
+  formData.append('email',   email);
+  formData.append('message', message);
+
   fetch('https://api.web3forms.com/submit', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      access_key: WEB3FORMS_KEY, //your access key tells Web3Forms which email address to deliver to
-      name:    name,
-      email:   email,
-      message: message
-    })
+    body: formData //FormData sends as multipart instead of JSON, skipping the preflight CORS check
   })
   .then(res => res.json()) //parses the JSON response from Web3Forms
   .then(data => {
