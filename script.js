@@ -2,10 +2,14 @@
    GRAPHIC DESIGN SITE — script.js
    ============================================================ */
 
-/* ── Web3Forms Init ───────────────────────────────────────── */
-// Go to https://web3forms.com, enter your email, and they will send you a key — no account needed
-// Replace the value below with the key from your inbox
-const WEB3FORMS_KEY = 'a6f3ff50-c080-4f99-8604-1e1d2369988f'; //paste your access key here — free, no domain restrictions
+/* ── EmailJS Init ─────────────────────────────────────────── */
+// Sign up free at https://emailjs.com, then replace these 3 values:
+const EMAILJS_PUBLIC_KEY  = 'rr5jNaaN9gbCc8u2n';   // Account > API Keys
+const EMAILJS_SERVICE_ID  = 'service_o5glqlk';   // Email Services tab
+const EMAILJS_TEMPLATE_ID = 'template_ha96h0r';  // Email Templates tab
+// In your EmailJS template use these variables: {{from_name}}, {{from_email}}, {{message}}
+
+emailjs.init(EMAILJS_PUBLIC_KEY); //initializes EmailJS with your public key so the SDK knows which account to send from
 
 /* ── Expandable Cards ─────────────────────────────────────── */
 document.querySelectorAll('.expandable-card').forEach(card => { //selects all elements with class expandable-card
@@ -358,7 +362,7 @@ retryBtn.addEventListener('click', startQuiz); //resets and restarts the quiz wi
 
 startQuiz(); //starts the quiz by picking random questions and loading the first one when the page loads
 
-/* ── Contact Form — Web3Forms ─────────────────────────────── */
+/* ── Contact Form — EmailJS ───────────────────────────────── */
 const contactForm  = document.getElementById('contactForm'); //grabs contact form element
 const formSubmit   = document.getElementById('formSubmit');  //grabs submit button element
 const formSuccess  = document.getElementById('formSuccess'); //grabs success message element
@@ -398,32 +402,20 @@ formSubmit.addEventListener('click', () => {
   formSubmit.disabled    = true;
   formSubmit.textContent = 'Sending…';
 
-  // Sends form data using FormData instead of JSON — avoids CORS preflight issues
-  // Simple POST requests with FormData don't trigger a preflight check unlike JSON requests
-  const formData = new FormData();
-  formData.append('access_key', WEB3FORMS_KEY); //your access key tells Web3Forms which email address to deliver to
-  formData.append('name',    name);
-  formData.append('email',   email);
-  formData.append('message', message);
-
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    body: formData //FormData sends as multipart instead of JSON, skipping the preflight CORS check
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, { //sends the form data to EmailJS using the configured service and template
+    from_name:  name,   //maps to {{from_name}} in the EmailJS template
+    from_email: email,  //maps to {{from_email}} in the EmailJS template
+    message:    message //maps to {{message}} in the EmailJS template
   })
-  .then(res => res.json()) //parses the JSON response from Web3Forms
-  .then(data => {
-    if (data.success) { //if Web3Forms confirms success, shows success message and resets the form
-      formSuccess.textContent = '✓ Message sent! We\'ll be in touch soon.';
-      formSuccess.style.color = '';
-      formSuccess.classList.remove('hidden');
-      contactForm.reset();
-      setTimeout(() => formSuccess.classList.add('hidden'), 5000); //hides success message after 5 seconds
-    } else { //if Web3Forms returns a non-success response, shows an error message
-      throw new Error(data.message || 'Submission failed');
-    }
+  .then(() => { //if send succeeds, shows success message, resets the form, and hides the message after 5 seconds
+    formSuccess.textContent = '✓ Message sent! We\'ll be in touch soon.';
+    formSuccess.style.color = '';
+    formSuccess.classList.remove('hidden');
+    contactForm.reset();
+    setTimeout(() => formSuccess.classList.add('hidden'), 5000);
   })
-  .catch(err => { //if the fetch itself fails or an error was thrown, shows a red error message
-    console.error('Web3Forms error:', err);
+  .catch(err => { //if send fails, logs the error and shows a red error message instead
+    console.error('EmailJS error:', err);
     formSuccess.textContent = '✗ Something went wrong. Please try again.';
     formSuccess.style.color = '#dc3545';
     formSuccess.classList.remove('hidden');
