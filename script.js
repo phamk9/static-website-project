@@ -4,9 +4,9 @@
 
 /* ── EmailJS Init ─────────────────────────────────────────── */
 // Sign up free at https://emailjs.com, then replace these 3 values:
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account > API Keys
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services tab
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates tab
+const EMAILJS_PUBLIC_KEY  = 'rr5jNaaN9gbCc8u2n';   // Account > API Keys
+const EMAILJS_SERVICE_ID  = 'service_o5glqlk';   // Email Services tab
+const EMAILJS_TEMPLATE_ID = 'template_ha96h0r';  // Email Templates tab
 // In your EmailJS template, use these variables: {{from_name}}, {{from_email}}, {{message}}
 
 emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); //initializes EmailJS with your public key so the SDK knows which account to send from
