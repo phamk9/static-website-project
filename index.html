@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- EmailJS SDK — defer means it loads after HTML is parsed and never blocks script.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <!-- EmailJS SDK loaded at bottom of body just before script.js so it never blocks rendering and is always ready -->
 </head>
 <body>
 
@@ -774,6 +773,7 @@
 <!-- COPY NOTIFICATION -->
 <div id="copyNotification" class="copy-notification">Hex copied!</div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
