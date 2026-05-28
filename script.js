@@ -9,7 +9,12 @@ const EMAILJS_SERVICE_ID  = 'service_o5glqlk';   // Email Services tab
 const EMAILJS_TEMPLATE_ID = 'template_ha96h0r';  // Email Templates tab
 // In your EmailJS template use these variables: {{from_name}}, {{from_email}}, {{message}}
 
-emailjs.init(EMAILJS_PUBLIC_KEY); //initializes EmailJS with your public key so the SDK knows which account to send from
+// Guards against the EmailJS SDK failing to load from the CDN — without this check,
+// calling emailjs.init() when the SDK is undefined throws a ReferenceError that halts
+// all remaining JavaScript on the page, breaking the quiz, slider, glossary, and every other feature
+if (typeof emailjs !== 'undefined') {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
 
 /* ── Modal Windows ────────────────────────────────────────── */
 // Opens a modal overlay by id, locks body scroll, and focuses the close button for accessibility
@@ -432,6 +437,17 @@ formSubmit.addEventListener('click', () => {
   // Disable button and show sending state so user knows the request is in progress
   formSubmit.disabled    = true;
   formSubmit.textContent = 'Sending…';
+
+  // Guard against the EmailJS SDK not being available — fails gracefully instead of throwing
+  if (typeof emailjs === 'undefined') {
+    formSuccess.textContent = '✗ Email service unavailable. Please try again later.';
+    formSuccess.style.color = '#dc3545';
+    formSuccess.classList.remove('hidden');
+    formSubmit.disabled    = false;
+    formSubmit.textContent = 'Send Message';
+    setTimeout(() => formSuccess.classList.add('hidden'), 5000);
+    return;
+  }
 
   emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, { //sends the form data to EmailJS using the configured service and template
     from_name:  name,   //maps to {{from_name}} in the EmailJS template
