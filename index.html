@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<!-- SCROLL PROGRESS BAR -->
+<div id="scrollProgressBar"></div>
+
 <!-- NAVIGATION -->
 <div class="navbar" id="navbar">
   <span class="nav-logo">GD</span>
@@ -15,7 +18,9 @@
     <a href="#home" class="nav-link">Home</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#projects" class="nav-link">Tutorials</a>
+    <a href="#tools" class="nav-link">Tools</a>
     <a href="#examples" class="nav-link">Examples</a>
+    <a href="#glossary" class="nav-link">Glossary</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
   <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">☽</button>
@@ -34,23 +39,17 @@
   <button class="hi" onclick="display()">Click me to learn more about this website!</button>
 
   <div class="card-container">
-    <div class="card expandable-card">
-      <div class="card-header">
-        <p>Graphic design is all about visual communication.</p>
-        <span class="card-arrow">&#8964;</span>
-      </div>
-      <div class="card-body">
-        <p>Designers use color, typography, and layout to convey messages effectively. Every design decision — from font size to color choice — influences how a viewer feels and what they understand.</p>
-      </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Foundations</span>
+      <h3 class="modal-card-title">Graphic design is visual communication.</h3>
+      <p class="modal-card-preview">Every color choice, font, and layout decision shapes how a viewer feels and what they understand.</p>
+      <button class="modal-open-btn" data-modal="modal-visual-comm">Read More →</button>
     </div>
-    <div class="card expandable-card">
-      <div class="card-header">
-        <p>Design is everywhere.</p>
-        <span class="card-arrow">&#8964;</span>
-      </div>
-      <div class="card-body">
-        <p>From logos and websites to advertisements and social media graphics, design shapes almost every visual experience in our daily lives. Learning design gives you a new way to see the world.</p>
-      </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Perspective</span>
+      <h3 class="modal-card-title">Design is everywhere around us.</h3>
+      <p class="modal-card-preview">From cereal boxes to skyscrapers, intentional design shapes nearly every visual experience in modern life.</p>
+      <button class="modal-open-btn" data-modal="modal-design-everywhere">Read More →</button>
     </div>
   </div>
 </div>
@@ -66,27 +65,23 @@
     Graphic design is the art and practice of planning and projecting ideas through visual content.
     It combines images, text, and layout techniques to create engaging designs used in branding,
     advertising, web design, and more. Popular tools include Adobe Photoshop and Adobe Illustrator,
-    which allow designers to create both raster and vector graphics.
+    which allow designers to create both <span class="gd-tooltip" data-term="raster">raster</span> and <span class="gd-tooltip" data-term="vector">vector</span> graphics.
   </p>
 
   <div class="card-container">
-    <div class="card expandable-card">
-      <div class="card-header">
-        <p>Typography is a key element of design.</p>
-        <span class="card-arrow">&#8964;</span>
-      </div>
-      <div class="card-body">
-        <p>Choosing the right font can completely change how a message is perceived. Serif fonts feel traditional and trustworthy, while sans-serif fonts feel modern and clean. Script fonts add elegance, while display fonts make a bold statement.</p>
-      </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Typography</span>
+      <h3 class="modal-card-title">Typography is a key element of design.</h3>
+      <p class="modal-card-preview">The right font transforms a message. Learn the difference between <span class="gd-tooltip" data-term="serif">serif</span>, sans-serif, script, and display typefaces.</p>
+      <div class="modal-card-meta"><span class="read-time">3 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-typography">Read More →</button>
     </div>
-    <div class="card expandable-card">
-      <div class="card-header">
-        <p>Color theory helps designers create impactful designs.</p>
-        <span class="card-arrow">&#8964;</span>
-      </div>
-      <div class="card-body">
-        <p>Understanding warm vs. cool tones, complementary colors, and color psychology allows designers to evoke specific emotions. Red signals urgency or passion, blue conveys calm and trust, and yellow radiates optimism.</p>
-      </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Color Theory</span>
+      <h3 class="modal-card-title">Color theory helps designers create impactful designs.</h3>
+      <p class="modal-card-preview">Understand <span class="gd-tooltip" data-term="complementary">complementary colors</span>, warm vs. cool tones, and how color psychology drives emotional responses.</p>
+      <div class="modal-card-meta"><span class="read-time">4 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-color-theory">Read More →</button>
     </div>
   </div>
 </div>
@@ -100,23 +95,47 @@
   <p>Explore beginner-friendly tutorials to start your graphic design journey.</p>
 
   <div class="card-container">
-    <div class="card expandable-card">
-      <div class="card-header">
-        <p>Create logos in Adobe Illustrator.</p>
-        <span class="card-arrow">&#8964;</span>
-      </div>
-      <div class="card-body">
-        <p>Start with basic shapes using the Shape Tool, combine them with the Pathfinder panel, then add typography. Use vector paths so your logo scales infinitely without losing quality. Export as SVG or PDF for professional use.</p>
-      </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Illustrator</span>
+      <h3 class="modal-card-title">Create logos in Adobe Illustrator.</h3>
+      <p class="modal-card-preview">Learn shapes, the <span class="gd-tooltip" data-term="pathfinder">Pathfinder</span> panel, and vector typography to build professional, scalable logos.</p>
+      <div class="modal-card-meta"><span class="read-time">5 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-ai-logo">Read More →</button>
     </div>
-    <div class="card expandable-card">
-      <div class="card-header">
-        <p>Edit photos in Adobe Photoshop.</p>
-        <span class="card-arrow">&#8964;</span>
-      </div>
-      <div class="card-body">
-        <p>Master layers and adjustment layers for non-destructive editing. Use the Pen Tool to make precise selections, blend modes to composite images, and smart filters to apply effects you can always tweak later.</p>
-      </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Photoshop</span>
+      <h3 class="modal-card-title">Edit photos in Adobe Photoshop.</h3>
+      <p class="modal-card-preview">Master <span class="gd-tooltip" data-term="layers">layers</span>, adjustment layers, the Pen Tool, and <span class="gd-tooltip" data-term="blend-modes">blend modes</span> for non-destructive, professional photo editing.</p>
+      <div class="modal-card-meta"><span class="read-time">6 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-ps-photo">Read More →</button>
+    </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Illustrator</span>
+      <h3 class="modal-card-title">Master the Pen Tool in Illustrator.</h3>
+      <p class="modal-card-preview">The Pen Tool is the backbone of vector design. Learn anchor points, <span class="gd-tooltip" data-term="bezier">Bézier curves</span>, and path editing with precision.</p>
+      <div class="modal-card-meta"><span class="read-time">5 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-ai-pentool">Read More →</button>
+    </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Photoshop</span>
+      <h3 class="modal-card-title">Use Layer Masks in Photoshop.</h3>
+      <p class="modal-card-preview">Layer masks let you hide and reveal parts of a layer without permanently erasing anything — the cornerstone of <span class="gd-tooltip" data-term="non-destructive">non-destructive editing</span>.</p>
+      <div class="modal-card-meta"><span class="read-time">4 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-ps-masks">Read More →</button>
+    </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Illustrator</span>
+      <h3 class="modal-card-title">Shape Builder Tool in Illustrator.</h3>
+      <p class="modal-card-preview">Merge and subtract overlapping shapes with a single drag to build complex icons, logos, and illustrations quickly.</p>
+      <div class="modal-card-meta"><span class="read-time">4 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-ai-shapes">Read More →</button>
+    </div>
+    <div class="card modal-card">
+      <span class="modal-card-tag">Photoshop</span>
+      <h3 class="modal-card-title">Work with Smart Objects in Photoshop.</h3>
+      <p class="modal-card-preview">Smart Objects preserve your original image data so you can transform, filter, and resize endlessly without quality loss.</p>
+      <div class="modal-card-meta"><span class="read-time">5 min read</span></div>
+      <button class="modal-open-btn" data-modal="modal-ps-smart">Read More →</button>
     </div>
   </div>
 
@@ -135,9 +154,14 @@
         <a class="resource-link" href="https://www.youtube.com/results?search_query=adobe+photoshop+beginner+tutorial" target="_blank">Watch on YouTube ↗</a>
       </div>
       <div class="card resource-card">
-        <div class="resource-label">Free Tools</div>
-        <p>Try Figma or Canva — free, browser-based design tools great for beginners.</p>
+        <div class="resource-label">Figma</div>
+        <p>Try Figma — a free, browser-based design tool perfect for UI, prototyping, and collaboration.</p>
         <a class="resource-link" href="https://www.figma.com" target="_blank">Open Figma ↗</a>
+      </div>
+      <div class="card resource-card">
+        <div class="resource-label">Canva</div>
+        <p>Canva is a beginner-friendly, drag-and-drop design tool for social media, posters, presentations, and more — no download required.</p>
+        <a class="resource-link" href="https://www.canva.com" target="_blank">Open Canva ↗</a>
       </div>
     </div>
   </div>
@@ -167,7 +191,116 @@
 <!-- PARALLAX 4 -->
 <div class="parallax" style="background-image:url('https://curtindubai.ac.ae/wp-content/uploads/2023/05/Graphic-Design-Course-Banner-1920x960-1.jpg');"></div>
 
-<!-- EXAMPLES SECTION -->
+<!-- TOOLS SECTION -->
+<div class="section fade-in" id="tools">
+  <h1>Interactive Tools</h1>
+  <p>Hands-on tools that bring design theory to life. Experiment directly in the browser.</p>
+
+  <!-- COLOR PALETTE GENERATOR -->
+  <div class="tool-block" id="tool-color">
+    <div class="tool-header">
+      <span class="tool-tag">Color Theory</span>
+      <h2 class="tool-title">Color Palette Generator</h2>
+      <p class="tool-desc">Pick a base color and instantly generate complementary, analogous, and triadic palettes. Click any swatch to copy its hex code.</p>
+    </div>
+    <div class="tool-body">
+      <div class="color-picker-row">
+        <label class="color-input-label" for="baseColorPicker">Base Color</label>
+        <input type="color" id="baseColorPicker" value="#c94b2c" class="color-native-picker">
+        <span class="color-hex-display" id="baseHexDisplay">#c94b2c</span>
+      </div>
+      <div class="palette-sections" id="paletteSections">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY PLAYGROUND -->
+  <div class="tool-block" id="tool-type">
+    <div class="tool-header">
+      <span class="tool-tag">Typography</span>
+      <h2 class="tool-title">Typography Playground</h2>
+      <p class="tool-desc">Type something below and experiment with fonts, size, weight, and leading to see how typographic choices change the feel of a message.</p>
+    </div>
+    <div class="tool-body">
+      <div class="typo-controls">
+        <div class="typo-control-group">
+          <label>Font Family</label>
+          <select id="typoFont">
+            <option value="'Playfair Display', serif">Playfair Display — Serif</option>
+            <option value="'DM Sans', sans-serif">DM Sans — Sans-serif</option>
+            <option value="'Georgia', serif">Georgia — Classic Serif</option>
+            <option value="'Courier New', monospace">Courier New — Monospace</option>
+            <option value="'Impact', sans-serif">Impact — Display</option>
+            <option value="'Garamond', serif">Garamond — Old Style</option>
+            <option value="'Trebuchet MS', sans-serif">Trebuchet MS — Humanist</option>
+            <option value="'Palatino', serif">Palatino — Transitional</option>
+          </select>
+        </div>
+        <div class="typo-control-group">
+          <label>Size <span id="typoSizeVal">48</span>px</label>
+          <input type="range" id="typoSize" min="12" max="120" value="48">
+        </div>
+        <div class="typo-control-group">
+          <label>Weight</label>
+          <select id="typoWeight">
+            <option value="300">Light 300</option>
+            <option value="400" selected>Regular 400</option>
+            <option value="500">Medium 500</option>
+            <option value="700">Bold 700</option>
+            <option value="900">Black 900</option>
+          </select>
+        </div>
+        <div class="typo-control-group">
+          <label>Line Height <span id="typoLeadVal">1.4</span></label>
+          <input type="range" id="typoLead" min="0.8" max="3.0" step="0.1" value="1.4">
+        </div>
+        <div class="typo-control-group">
+          <label>Letter Spacing <span id="typoTrackVal">0</span>em</label>
+          <input type="range" id="typoTrack" min="-0.1" max="0.5" step="0.01" value="0">
+        </div>
+        <div class="typo-control-group">
+          <label>Align</label>
+          <div class="typo-align-btns">
+            <button class="typo-align-btn active" data-align="left">&#8676;</button>
+            <button class="typo-align-btn" data-align="center">&#8596;</button>
+            <button class="typo-align-btn" data-align="right">&#8677;</button>
+          </div>
+        </div>
+      </div>
+      <div class="typo-preview-wrap">
+        <div class="typo-preview" id="typoPreview" contenteditable="true" spellcheck="false">Good design is as little design as possible.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIGN PRINCIPLES INTERACTIVE DEMO -->
+  <div class="tool-block" id="tool-principles">
+    <div class="tool-header">
+      <span class="tool-tag">Design Principles</span>
+      <h2 class="tool-title">Principles in Action</h2>
+      <p class="tool-desc">Click each principle to see a live, animated demonstration of how it shapes a design.</p>
+    </div>
+    <div class="tool-body">
+      <div class="principles-tabs">
+        <button class="principle-tab active" data-principle="contrast">Contrast</button>
+        <button class="principle-tab" data-principle="alignment">Alignment</button>
+        <button class="principle-tab" data-principle="proximity">Proximity</button>
+        <button class="principle-tab" data-principle="repetition">Repetition</button>
+        <button class="principle-tab" data-principle="hierarchy">Hierarchy</button>
+        <button class="principle-tab" data-principle="whitespace">White Space</button>
+      </div>
+      <div class="principles-stage" id="principlesStage">
+        <!-- Rendered by JS -->
+      </div>
+      <p class="principles-caption" id="principlesCaption"></p>
+    </div>
+  </div>
+</div>
+
+<!-- PARALLAX 4b -->
+<div class="parallax" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80');"></div>
+
 <div class="section fade-in" id="examples">
   <h1>Examples</h1>
   <p>Browse a curated gallery of graphic design styles and techniques.</p>
@@ -228,9 +361,91 @@
       <button class="slider-btn" id="nextBtn">&#8594;</button>
     </div>
   </div>
+
+  <!-- ART GALLERY -->
+  <div class="art-gallery-section">
+    <h2 class="resources-title">Design Gallery</h2>
+    <p style="margin-top:0.5rem;">Click any image to explore further.</p>
+
+    <div class="art-gallery">
+
+      <a class="art-item" href="https://www.awwwards.com/inspiration/" target="_blank" aria-label="Minimalist Poster Design">
+        <img class="art-item-img" src="https://ik.imagekit.io/theartling/prod/tr:w-1840,c-at_max/original_images/Piet-Mondrian-1921-juoda-raudona-melyna-balta.jpg" alt="Minimalist poster design" loading="lazy">
+        <div class="art-item-overlay">
+          <span class="art-item-tag">Minimalism</span>
+          <p class="art-item-title">The Power of Less</p>
+          <span class="art-item-link">Explore on Awwwards ↗</span>
+        </div>
+      </a>
+
+      <a class="art-item" href="https://www.behance.net/search/projects/brand+identity" target="_blank" aria-label="Brand Identity Design">
+        <img class="art-item-img" src="https://static.wixstatic.com/media/84b06e_c6eba792b09f4cf2bc555f26a381e1cb~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/84b06e_c6eba792b09f4cf2bc555f26a381e1cb~mv2.png" alt="Brand identity design" loading="lazy">
+        <div class="art-item-overlay">
+          <span class="art-item-tag">Branding</span>
+          <p class="art-item-title">Brand Identity Systems</p>
+          <span class="art-item-link">Browse on Behance ↗</span>
+        </div>
+      </a>
+
+      <a class="art-item" href="https://coolors.co/palettes/trending" target="_blank" aria-label="Color Palette Design">
+        <img class="art-item-img" src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1600,h_1200/https://assets.designhill.com/design-blog/wp-content/uploads/2017/08/Colors.png" alt="Color palette exploration" loading="lazy">
+        <div class="art-item-overlay">
+          <span class="art-item-tag">Color</span>
+          <p class="art-item-title">Palette Exploration</p>
+          <span class="art-item-link">Try Coolors ↗</span>
+        </div>
+      </a>
+
+      <a class="art-item" href="https://fonts.google.com" target="_blank" aria-label="Typography Design">
+        <img class="art-item-img" src="https://grinninggraphics.co.uk/wp-content/uploads/2025/01/The-Importance-of-Typography-in-Graphic-Design-01.webp" alt="Typography design" loading="lazy">
+        <div class="art-item-overlay">
+          <span class="art-item-tag">Typography</span>
+          <p class="art-item-title">Expressive Type</p>
+          <span class="art-item-link">Explore Google Fonts ↗</span>
+        </div>
+      </a>
+
+      <a class="art-item" href="https://www.adobe.com/products/illustrator.html" target="_blank" aria-label="Digital Illustration">
+        <img class="art-item-img" src="https://blog.tubikstudio.com/wp-content/uploads/2018/12/graphic-design-illustration-in-UI-design.jpg" alt="Digital illustration" loading="lazy">
+        <div class="art-item-overlay">
+          <span class="art-item-tag">Illustration</span>
+          <p class="art-item-title">Digital Art &amp; Vector</p>
+          <span class="art-item-link">Try Illustrator ↗</span>
+        </div>
+      </a>
+
+      <a class="art-item" href="https://www.designspiration.com" target="_blank" aria-label="Editorial Layout Design">
+        <img class="art-item-img" src="https://yesimadesigner.com/wp-content/uploads/2024/10/Anatomy-of-a-Magazine_3.jpg" alt="Editorial layout design" loading="lazy">
+        <div class="art-item-overlay">
+          <span class="art-item-tag">Layout</span>
+          <p class="art-item-title">Grid &amp; Composition</p>
+          <span class="art-item-link">Browse Designspiration ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
 </div>
 
 <!-- PARALLAX 5 -->
+<div class="parallax" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');"></div>
+
+<!-- GLOSSARY SECTION -->
+<div class="section" id="glossary">
+  <h1>Glossary</h1>
+  <p>A searchable reference of essential graphic design terms. Click any letter to jump to that group.</p>
+
+  <div class="glossary-search-wrap">
+    <input type="text" id="glossarySearch" class="glossary-search" placeholder="Search terms…" autocomplete="off">
+    <span class="glossary-search-icon">⌕</span>
+  </div>
+  <div class="glossary-alpha-nav" id="glossaryAlphaNav"></div>
+  <div class="glossary-list" id="glossaryList">
+    <!-- Rendered by JS -->
+  </div>
+</div>
+
+<!-- PARALLAX 6 -->
 <div class="parallax" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');"></div>
 
 <!-- CONTACT SECTION -->
@@ -283,6 +498,275 @@
 
 <!-- BACK TO TOP -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL WINDOWS
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- Modal: Visual Communication -->
+<div class="modal-overlay" id="modal-visual-comm" role="dialog" aria-modal="true" aria-labelledby="modal-visual-comm-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Foundations</span>
+    <h2 class="modal-title" id="modal-visual-comm-title">Graphic Design as Visual Communication</h2>
+    <div class="modal-body">
+      <p>At its core, graphic design is the practice of using visual elements — color, shape, typography, space, and imagery — to convey ideas, emotions, and information. Unlike writing or speaking, visual communication works at a near-instant speed; a viewer forms a first impression of a design in under 50 milliseconds, before they've read a single word. This means every design decision carries significant weight.</p>
+      <h4>The Core Elements</h4>
+      <p>Every design is built from a few fundamental building blocks. <strong>Color</strong> sets the emotional tone and draws the eye to what matters most. <strong>Typography</strong> determines how readable your message is and reinforces the personality of the brand or content. <strong>Layout and composition</strong> guide a viewer's eye through the design in a deliberate sequence — what they see first, second, and third. <strong>Imagery</strong> and iconography add meaning and context that words alone can't always achieve.</p>
+      <h4>The Principles of Design</h4>
+      <p>Beyond the individual elements, experienced designers apply a set of time-tested principles to unify their work. <strong>Contrast</strong> makes important elements stand out. <strong>Alignment</strong> creates order and connects related items. <strong>Repetition</strong> builds consistency and visual rhythm. <strong>Proximity</strong> groups related items together so viewers understand relationships instantly. <strong>Hierarchy</strong> ensures the viewer knows which information is most important at a glance.</p>
+      <h4>Why It Matters</h4>
+      <p>Visual communication is a universal language — it crosses cultural and linguistic barriers more effectively than text. A well-designed warning sign doesn't need words. A great brand logo communicates values and quality without a single sentence. Learning to "speak" visually is one of the most powerful skills a designer develops, because it means understanding not just how to make things look good, but how to make them communicate precisely and effectively.</p>
+      <ul>
+        <li><strong>Start observing</strong> — notice the design in your everyday environment: signage, packaging, apps, books.</li>
+        <li><strong>Study contrast</strong> — practice making one element dominate a composition.</li>
+        <li><strong>Understand the grid</strong> — most professional designs are built on invisible alignment grids.</li>
+        <li><strong>Reduce before you add</strong> — novice designers over-design; professionals know when to stop.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Design is Everywhere -->
+<div class="modal-overlay" id="modal-design-everywhere" role="dialog" aria-modal="true" aria-labelledby="modal-design-everywhere-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Perspective</span>
+    <h2 class="modal-title" id="modal-design-everywhere-title">Design is Everywhere Around Us</h2>
+    <div class="modal-body">
+      <p>Once you start studying graphic design, you can't stop seeing it. The typeface on your coffee cup, the grid structure of a newspaper, the color of a traffic sign, the layout of a hospital form — each is the result of deliberate design decisions made to guide perception and behavior. Design is not decoration; it is problem-solving made visible.</p>
+      <h4>Fields That Rely on Graphic Design</h4>
+      <p><strong>Branding and identity</strong> is perhaps the most visible field — designing logos, color systems, and visual languages for companies and organizations. <strong>Publishing and editorial design</strong> covers books, magazines, and newspapers, where layout, typography, and imagery are orchestrated to make complex content readable and engaging. <strong>Web and UI/UX design</strong> focuses on screen-based experiences — apps, websites, and software interfaces. <strong>Environmental design</strong> encompasses wayfinding systems, exhibition spaces, and public signage that guide people through physical spaces.</p>
+      <h4>Learning to See Like a Designer</h4>
+      <p>One of the most transformative things about studying graphic design is that it permanently changes how you see the world. You begin to notice when a website's button color is too close to the background, when a restaurant menu's hierarchy makes it hard to find what you're looking for, or when a brand's typography feels completely mismatched to its product. This critical eye is what makes a designer valuable — they don't just make things pretty, they solve problems that most people don't even consciously notice.</p>
+      <h4>The Impact of Intentional Design</h4>
+      <p>Research consistently shows that good design improves outcomes. A clear medicine label reduces dosing errors. A well-designed data dashboard leads to better business decisions. An intuitive app interface retains users. Design is not a luxury — in a world flooded with information and choices, design is what allows the right message to reach the right person at the right moment.</p>
+      <ul>
+        <li>Try a <strong>"design audit"</strong> — pick 5 everyday objects and analyze their design choices.</li>
+        <li>Screenshot designs you love (or hate) and write one sentence explaining why.</li>
+        <li>Explore <strong>Behance</strong>, <strong>Dribbble</strong>, and <strong>Awwwards</strong> to build your design vocabulary.</li>
+        <li>Visit a museum or gallery and observe how space, light, and labels guide your experience.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Typography -->
+<div class="modal-overlay" id="modal-typography" role="dialog" aria-modal="true" aria-labelledby="modal-typography-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Typography</span>
+    <h2 class="modal-title" id="modal-typography-title">Typography: The Art of Arranging Type</h2>
+    <div class="modal-body">
+      <p>Typography is far more than choosing a font. It is the complete discipline of selecting, sizing, spacing, and arranging type to make written language visually appealing and easy to read. Practiced well, typography is nearly invisible — the reader absorbs the content without consciously noticing the type. Done poorly, it can make even great content unreadable.</p>
+      <h4>Font Classifications</h4>
+      <p><strong>Serif fonts</strong> (like Times New Roman, Garamond, and Playfair Display) have small decorative strokes — called serifs — at the ends of letterforms. They feel traditional, authoritative, and trustworthy, which is why newspapers, law firms, and academic publishers favor them. <strong>Sans-serif fonts</strong> (like Helvetica, Futura, and DM Sans) have clean, unadorned letterforms. They feel modern, approachable, and clear — preferred in technology, healthcare, and minimalist branding. <strong>Script fonts</strong> mimic handwriting and add elegance or personality, though they should be used sparingly. <strong>Display fonts</strong> are highly decorative and best reserved for large headlines where impact matters more than extended readability.</p>
+      <h4>Typographic Hierarchy</h4>
+      <p>Hierarchy tells readers what to look at first. You build it through size (larger = more important), weight (bold = important), color (dark or accent-colored = draws attention), and spacing. A strong typographic hierarchy typically uses 2–3 type sizes: a headline, a subheading, and body text. Using more than 3 font families in a single design almost always creates visual chaos — restraint is a virtue in typography.</p>
+      <h4>Key Technical Terms</h4>
+      <ul>
+        <li><strong>Leading</strong> — the vertical space between lines of text. Tight leading feels dense; generous leading feels airy and readable.</li>
+        <li><strong>Kerning</strong> — adjusting the space between specific pairs of letters (e.g., "AV" needs less space than "II").</li>
+        <li><strong>Tracking</strong> — adjusting the spacing between all letters in a word or block of text uniformly.</li>
+        <li><strong>Baseline</strong> — the invisible line that letters sit on. Consistent baselines create visual order.</li>
+        <li><strong>Measure</strong> — the width of a column of text. Ideal for body text: 45–75 characters per line.</li>
+      </ul>
+      <h4>Tools and Resources</h4>
+      <p>Google Fonts offers over 1,400 free typefaces. Adobe Fonts is included with all Adobe Creative Cloud plans. Pair fonts using tools like Fontpair.co or the "Font pairing" suggestions built into Canva. For deep study, the books <em>The Elements of Typographic Style</em> by Robert Bringhurst and <em>Stop Stealing Sheep</em> by Erik Spiekermann are considered essential reading.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Color Theory -->
+<div class="modal-overlay" id="modal-color-theory" role="dialog" aria-modal="true" aria-labelledby="modal-color-theory-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Color Theory</span>
+    <h2 class="modal-title" id="modal-color-theory-title">Color Theory: Using Color with Intent</h2>
+    <div class="modal-body">
+      <p>Color is one of the most powerful tools in a designer's arsenal — it directs attention, communicates meaning before a single word is read, and creates strong emotional associations. Understanding color theory allows you to move beyond guessing which colors "look good" and start making deliberate, strategic choices that serve your design's purpose.</p>
+      <h4>The Color Wheel and Relationships</h4>
+      <p>All color theory begins with the color wheel, which organizes hues to reveal their relationships. <strong>Complementary colors</strong> sit directly opposite each other on the wheel (e.g., red and green, blue and orange). Placed side by side they vibrate with contrast, making both colors appear more vivid — highly effective for calls to action. <strong>Analogous colors</strong> sit next to each other on the wheel (e.g., yellow, yellow-orange, orange) and create harmonious, unified palettes that feel natural and cohesive. <strong>Triadic schemes</strong> use three colors equally spaced on the wheel for a vibrant, balanced look. <strong>Monochromatic schemes</strong> use tints and shades of a single hue for a sophisticated, unified aesthetic.</p>
+      <h4>Warm vs. Cool Tones</h4>
+      <p>Colors are broadly categorized as warm (reds, oranges, yellows) or cool (blues, greens, purples). Warm colors advance — they feel closer to the viewer and create urgency, energy, and warmth. Cool colors recede — they feel farther away and evoke calm, professionalism, and trust. This principle is used constantly in marketing: fast-food chains use red and yellow to stimulate appetite and urgency, while banks and healthcare companies lean heavily on blue and green to convey security and reliability.</p>
+      <h4>Color Psychology</h4>
+      <ul>
+        <li><strong>Red</strong> — passion, urgency, energy, danger. Used by brands wanting to create excitement or prompt immediate action.</li>
+        <li><strong>Blue</strong> — trust, calm, professionalism, technology. The most commonly used color in corporate branding.</li>
+        <li><strong>Yellow</strong> — optimism, warmth, attention. Pairs well with black for maximum contrast.</li>
+        <li><strong>Green</strong> — nature, health, growth, money. Widely used in wellness and sustainability brands.</li>
+        <li><strong>Black</strong> — luxury, sophistication, authority. Creates strong contrast and a premium feel.</li>
+        <li><strong>White</strong> — cleanliness, simplicity, space. Dominant in minimalist and healthcare design.</li>
+      </ul>
+      <h4>Color in Digital vs. Print</h4>
+      <p>For screens, colors are defined in the <strong>RGB</strong> model (Red, Green, Blue), where all three at full intensity make white. For print, the <strong>CMYK</strong> model (Cyan, Magenta, Yellow, Black) is used. A color that looks vibrant on screen may look dull or different when printed — always convert to CMYK before sending files to print, and use soft-proofing in Photoshop to preview the result.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Logos in Illustrator -->
+<div class="modal-overlay" id="modal-ai-logo" role="dialog" aria-modal="true" aria-labelledby="modal-ai-logo-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Illustrator</span>
+    <h2 class="modal-title" id="modal-ai-logo-title">Creating Logos in Adobe Illustrator</h2>
+    <div class="modal-body">
+      <p>Illustrator is the industry standard for logo design because logos must scale from a tiny website favicon (16×16px) to a massive billboard without losing quality. The reason: Illustrator creates <strong>vector graphics</strong> — images defined by mathematical equations rather than pixels. You can scale a vector to any size and it remains perfectly sharp. A raster image (like a JPEG) becomes blurry when enlarged.</p>
+      <h4>Start with Sketches, Not the Software</h4>
+      <p>The biggest mistake beginners make is jumping straight into Illustrator. Start with paper and pencil. Sketch 10–20 rough concepts in 2–5 minutes each. You're not looking for perfection — you're exploring ideas quickly. Once you have a direction you like, then open Illustrator. This process saves hours of aimless digital wandering.</p>
+      <h4>Building the Logo in Illustrator</h4>
+      <p>Start with basic shapes using the <strong>Rectangle (M)</strong>, <strong>Ellipse (L)</strong>, and <strong>Polygon</strong> tools. Combine and subtract them using the <strong>Pathfinder panel</strong> (Window > Pathfinder) — "Unite" merges shapes, "Minus Front" cuts one shape from another. For more complex curves and custom shapes, use the <strong>Pen Tool (P)</strong> to draw precise anchor points and Bézier curves. Add your typography using the <strong>Type Tool (T)</strong>, choose a font that matches the brand's personality, and convert the text to outlines (Type > Create Outlines) so the logo doesn't depend on the font being installed.</p>
+      <h4>Color and Refinement</h4>
+      <p>Great logos work in a single color before you add more. Start in black and white — if it doesn't communicate well without color, the shape isn't strong enough. Then add one primary color, then a secondary color if needed. Avoid gradients in logo design unless they are a deliberate, essential part of the brand identity, as gradients can cause complications in embroidery, one-color printing, and certain applications.</p>
+      <h4>Exporting Your Logo</h4>
+      <ul>
+        <li><strong>SVG</strong> — for web use; remains infinitely scalable in a browser.</li>
+        <li><strong>PDF</strong> — for print; preserves vector quality and is universally accepted by print shops.</li>
+        <li><strong>PNG (transparent background)</strong> — for digital use where a non-white background is needed. Export at 2× or 3× resolution for sharp display on retina screens.</li>
+        <li><strong>EPS</strong> — a legacy format still requested by some printers and embroidery shops.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Photo Editing in Photoshop -->
+<div class="modal-overlay" id="modal-ps-photo" role="dialog" aria-modal="true" aria-labelledby="modal-ps-photo-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Photoshop</span>
+    <h2 class="modal-title" id="modal-ps-photo-title">Photo Editing in Adobe Photoshop</h2>
+    <div class="modal-body">
+      <p>Photoshop is a raster-based image editor that works by manipulating pixels. It is the most powerful tool available for photo retouching, digital compositing, and texture-based artwork. With 30+ years of development behind it, Photoshop has a deep toolset — but the core concepts that professional photographers and designers rely on daily can be learned in a weekend.</p>
+      <h4>Understanding Layers</h4>
+      <p>Layers are the backbone of Photoshop. Think of them as transparent sheets stacked on top of each other — each layer contains its own content (a photo, text, a shape, an effect) and can be moved, edited, or hidden independently without affecting the others. Always keep your original photo on a locked Background layer and do all your editing on separate layers above it. This is the foundational rule of <strong>non-destructive editing</strong>: never permanently alter your original.</p>
+      <h4>Adjustment Layers</h4>
+      <p>Instead of directly altering pixel values, use <strong>Adjustment Layers</strong> (Layer > New Adjustment Layer) to change brightness, contrast, color balance, curves, and more. Adjustment layers are non-destructive — they affect all layers below them like a tinted filter, and you can always double-click them to change the settings or delete them to undo the effect. The most important adjustment layers to learn: <strong>Levels</strong> and <strong>Curves</strong> (for tonal control), <strong>Hue/Saturation</strong> (for color adjustments), and <strong>Color Balance</strong> (for shifting overall color temperature).</p>
+      <h4>Selection Tools and the Pen Tool</h4>
+      <p>Making precise selections is one of the most important skills in Photoshop. The <strong>Quick Selection Tool</strong> uses AI to detect edges automatically — great for separating subjects from backgrounds. The <strong>Magic Wand</strong> selects areas of similar color. For the most precise selections — particularly for hair, fur, or complex edges — use <strong>Select > Subject</strong> followed by <strong>Select > Refine Edge</strong>. The <strong>Pen Tool</strong> creates mathematical vector paths that you convert to selections; it's slower but produces the cleanest possible edge on hard-edged objects like product photography.</p>
+      <h4>Blend Modes and Compositing</h4>
+      <p>Blend modes determine how a layer interacts with the layers beneath it. <strong>Multiply</strong> darkens — it's perfect for overlaying textures without losing the image below. <strong>Screen</strong> lightens — useful for adding light effects. <strong>Overlay</strong> increases contrast while allowing some of the underlying image to show through. Learning to combine images using blend modes, masks, and adjustment layers is the foundation of digital compositing — the technique used in every movie poster, advertisement, and magazine cover.</p>
+      <ul>
+        <li>Always work at <strong>100% resolution</strong> when making precise selections or retouching.</li>
+        <li>Use <strong>Smart Sharpen</strong> as the last step before exporting — never sharpen destructively.</li>
+        <li>Save your working file as a <strong>.PSD</strong> to preserve all layers; export a flattened copy as JPEG or PNG for sharing.</li>
+        <li>Learn the keyboard shortcuts — they can double your speed. <strong>B</strong> = Brush, <strong>V</strong> = Move, <strong>Ctrl+Z</strong> = Undo, <strong>Ctrl+D</strong> = Deselect.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Pen Tool in Illustrator -->
+<div class="modal-overlay" id="modal-ai-pentool" role="dialog" aria-modal="true" aria-labelledby="modal-ai-pentool-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Illustrator</span>
+    <h2 class="modal-title" id="modal-ai-pentool-title">Mastering the Pen Tool in Illustrator</h2>
+    <div class="modal-body">
+      <p>The Pen Tool (P) is the most important and most feared tool in vector design. It allows you to draw any shape imaginable with absolute precision by placing <strong>anchor points</strong> connected by <strong>paths</strong>. Mastering it takes practice, but once you do, you can trace any object, draw any custom shape, and create professional-quality vector artwork that no other tool can match.</p>
+      <h4>How Anchor Points Work</h4>
+      <p>Every path in Illustrator is made of anchor points connected by line segments or curves. There are two types of anchor points: <strong>corner points</strong> (create sharp angles — just click to place one) and <strong>smooth points</strong> (create curves — click and drag to pull out direction handles). The direction handles determine the angle and length of the curve on either side of the point. The further you drag, the more pronounced the curve.</p>
+      <h4>Drawing Straight Lines</h4>
+      <p>To draw straight lines, simply click to place anchor points without dragging. Click your first point, click your second point, and so on. Close a path by clicking back on the first anchor point (a small circle appears next to the cursor). For perfect horizontal, vertical, or 45° lines, hold <strong>Shift</strong> while clicking.</p>
+      <h4>Drawing Curves (Bézier Curves)</h4>
+      <p>To create a smooth curve between two points, click and drag when placing each anchor point. The direction you drag determines which way the curve bends. Practice tip: always drag in the direction the path is traveling. One of the most common beginner mistakes is placing too many anchor points — professional vector artists use the fewest points possible to define a smooth shape, which makes paths easier to edit and produces cleaner curves.</p>
+      <h4>Converting and Editing Points</h4>
+      <p>Use the <strong>Anchor Point Tool (Shift+C)</strong> to convert between corner and smooth points. Click a smooth point to convert it to a corner; click-drag a corner point to convert it to a smooth curve. The <strong>Direct Selection Tool (A)</strong> lets you select and move individual anchor points and handles without affecting the rest of the path.</p>
+      <ul>
+        <li>Practice by tracing simple shapes: a leaf, a letter, a logo.</li>
+        <li>Use <strong>View > Smart Guides</strong> — they snap paths to other objects and show alignment cues.</li>
+        <li>The game <strong>The Bézier Game</strong> (bezier.method.ac) is one of the best free tools for learning the Pen Tool.</li>
+        <li>Aim for smooth, flowing paths with as few anchor points as possible.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Layer Masks in Photoshop -->
+<div class="modal-overlay" id="modal-ps-masks" role="dialog" aria-modal="true" aria-labelledby="modal-ps-masks-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Photoshop</span>
+    <h2 class="modal-title" id="modal-ps-masks-title">Layer Masks in Photoshop</h2>
+    <div class="modal-body">
+      <p>A layer mask is one of Photoshop's most powerful features — it lets you hide parts of a layer by "painting" over them in black, and reveal them again by painting in white. Crucially, the mask is completely non-destructive: the pixels you hide are never deleted, only concealed. You can always paint them back.</p>
+      <h4>The Golden Rule: Black Hides, White Reveals</h4>
+      <p>Layer masks are grayscale images that work like stencils. <strong>White areas</strong> on the mask show the layer content fully. <strong>Black areas</strong> hide the layer content completely (making it transparent). <strong>Gray areas</strong> create partial transparency — lighter gray is more visible, darker gray is more hidden. This is the entire logic of layer masks, and once it clicks, you'll use them on nearly every project.</p>
+      <h4>Creating and Painting a Mask</h4>
+      <p>To add a mask, select your layer and click the <strong>Add Layer Mask</strong> button at the bottom of the Layers panel (it looks like a rectangle with a circle inside it). The mask thumbnail appears next to your layer thumbnail — click it to select the mask, not the layer itself. Then use the <strong>Brush Tool (B)</strong> with black or white as your foreground color to paint the mask. Switch between black and white quickly by pressing <strong>X</strong>.</p>
+      <h4>Gradient Masks for Smooth Fades</h4>
+      <p>One of the most elegant uses of layer masks is creating smooth fades between images. With your mask selected, choose the <strong>Gradient Tool (G)</strong>, set it to a Black-to-White gradient, and drag across the image. The layer will fade from fully visible to fully transparent — perfect for photo blending, sky replacements, and soft vignettes.</p>
+      <h4>Refining Masks for Complex Subjects</h4>
+      <p>When masking complex subjects like hair, fur, or trees, use <strong>Select > Select and Mask</strong> (formerly Refine Edge). This dialog gives you tools to paint along fine edges and let Photoshop's AI intelligently separate foreground from background. The <strong>Smart Radius</strong> option automatically detects where hard and soft edges exist and adjusts the refinement accordingly.</p>
+      <ul>
+        <li>Press <strong>Alt+Click</strong> on a mask thumbnail to view the mask itself in the canvas — great for checking for holes or rough edges.</li>
+        <li>Use <strong>Overlay view</strong> in Select and Mask to see your mask as a red overlay on the image.</li>
+        <li>Feather a mask edge slightly (0.5–1px) to blend it naturally with the background.</li>
+        <li>Group layers and apply a single mask to the group to control multiple layers at once.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Shape Builder Tool in Illustrator -->
+<div class="modal-overlay" id="modal-ai-shapes" role="dialog" aria-modal="true" aria-labelledby="modal-ai-shapes-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Illustrator</span>
+    <h2 class="modal-title" id="modal-ai-shapes-title">Shape Builder Tool in Illustrator</h2>
+    <div class="modal-body">
+      <p>The Shape Builder Tool (Shift+M) is one of Illustrator's most intuitive tools for creating complex vector shapes from simple overlapping primitives. Rather than navigating menu-based operations, it lets you merge and subtract shapes with a simple drag or click directly on the canvas — making it faster and more visual than the Pathfinder panel for many tasks.</p>
+      <h4>How It Works</h4>
+      <p>First, draw and overlap several basic shapes — circles, rectangles, polygons. Select all the shapes you want to work with using the <strong>Selection Tool (V)</strong>. Then switch to the Shape Builder Tool (<strong>Shift+M</strong>). When you hover over your selected shapes, you'll see the individual regions that could be merged or removed highlighted in gray.</p>
+      <h4>Merging Shapes</h4>
+      <p>To combine regions into one unified shape, simply <strong>click and drag</strong> through the areas you want to join. As you drag, the regions you've touched highlight, and on release they merge into a single compound shape. This is perfect for building custom icons, abstract logos, and geometric illustrations from simple building blocks.</p>
+      <h4>Subtracting Shapes</h4>
+      <p>To remove a region, hold <strong>Alt (Option on Mac)</strong> and click the region you want to delete. The cursor changes to show a minus sign, indicating you're in subtraction mode. This works like a cookie cutter — you can punch holes, cut away sections, and carve out shapes with precision. Combine merging and subtracting to create complex interlocking shapes very quickly.</p>
+      <h4>Shape Builder vs. Pathfinder</h4>
+      <p>The <strong>Pathfinder panel</strong> (Window > Pathfinder) applies mathematical Boolean operations to entire shapes: Unite, Minus Front, Intersect, Exclude. It's useful for batch operations or when you need to apply the same operation to many shapes at once. The <strong>Shape Builder Tool</strong> is better for interactive, region-by-region work where you want to see and choose exactly which areas to merge or remove. Most professionals use both tools depending on the task.</p>
+      <ul>
+        <li>Use the Shape Builder Tool to rapidly prototype logo concepts from overlapping basic shapes.</li>
+        <li>Hold <strong>Shift</strong> while dragging to select and merge multiple regions at once.</li>
+        <li>Use it alongside the Pen Tool — draw a path over an existing shape to split it, then use Shape Builder to separate the halves.</li>
+        <li>Group your final shape and delete the original component shapes to keep your file clean.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Smart Objects in Photoshop -->
+<div class="modal-overlay" id="modal-ps-smart" role="dialog" aria-modal="true" aria-labelledby="modal-ps-smart-title">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <span class="modal-tag">Photoshop</span>
+    <h2 class="modal-title" id="modal-ps-smart-title">Smart Objects in Photoshop</h2>
+    <div class="modal-body">
+      <p>A Smart Object is a special layer type in Photoshop that contains embedded image data (either from a raster file, a vector file, or another Photoshop document) in a way that <strong>preserves the original at full quality</strong>, regardless of how many times you transform, resize, or filter it. If regular layers are like photocopies, Smart Objects are like containers that always hold the original negative inside.</p>
+      <h4>Why Smart Objects Matter</h4>
+      <p>In normal Photoshop layers, if you scale an image down to 10% of its original size and then try to scale it back up, you've permanently lost most of its pixel data — the result is blurry and degraded. A Smart Object prevents this: no matter how many times you scale, rotate, or distort it, the original embedded image data is preserved, so you can always return to full quality. This makes Smart Objects essential for any element you might need to resize multiple times — logos, photos, textures, and UI components.</p>
+      <h4>Converting Layers to Smart Objects</h4>
+      <p>Right-click any layer in the Layers panel and choose <strong>"Convert to Smart Object"</strong>. A small icon appears in the corner of the layer thumbnail, indicating it's now a Smart Object. You can also go to <strong>Layer > Smart Objects > Convert to Smart Object</strong>. To edit the contents of a Smart Object, double-click its thumbnail — it opens in a separate window where you can make changes and save them back.</p>
+      <h4>Smart Filters</h4>
+      <p>When you apply a filter to a Smart Object (Filter menu), it becomes a <strong>Smart Filter</strong> — a non-destructive filter that appears as a sublayer beneath the Smart Object. You can always double-click the Smart Filter to change its settings, drag it to reorder filters, or click its eye icon to temporarily hide it. This is the professional way to apply blur, sharpen, distort, and other effects — without ever permanently altering your pixels.</p>
+      <h4>Linked vs. Embedded Smart Objects</h4>
+      <p><strong>Embedded Smart Objects</strong> store the source file's data inside the PSD, making the file self-contained. <strong>Linked Smart Objects</strong> reference an external file on your hard drive — if you update the linked file, the Smart Object updates automatically across every document that uses it. Linked Smart Objects are extremely powerful for design systems where you have a shared element (like a logo or UI component) used in dozens of files.</p>
+      <ul>
+        <li>Use Smart Objects for all placed images — it costs nothing and protects you from quality loss.</li>
+        <li>Create <strong>mockup templates</strong> using Smart Objects — designers place product artwork into a phone or packaging Smart Object and it updates instantly.</li>
+        <li>Press <strong>Ctrl+Alt+Shift+E</strong> to stamp all visible layers into a new Smart Object without flattening your file.</li>
+        <li>Right-click a Smart Object and choose <strong>"Replace Contents"</strong> to swap the embedded image with a different file while keeping all your transformations and Smart Filters intact.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLTIP POPOVER -->
+<div id="gdTooltipPopover" class="gd-tooltip-popover" role="tooltip">
+  <span class="gd-tooltip-term" id="gdTooltipTerm"></span>
+  <p class="gd-tooltip-def" id="gdTooltipDef"></p>
+</div>
+
+<!-- COPY NOTIFICATION -->
+<div id="copyNotification" class="copy-notification">Hex copied!</div>
 
 <script src="script.js"></script>
 </body>
